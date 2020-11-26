@@ -1,0 +1,8 @@
+<div class="container">
+    <!-- app/views/restaurants/index.html.erb -->
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <%= link_to(restaurant.name , restaurant_path(restaurant.id)) %>
+    <% end %>
+  </ul>
+</div>

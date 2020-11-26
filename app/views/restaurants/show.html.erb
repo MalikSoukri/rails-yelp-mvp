@@ -1,0 +1,17 @@
+<div class="container mt-3 border  rounded">
+  <div>
+    <h2><%= @restaurant.name %></h2>
+    <p>This restaurant is specialise in <strong><%= @restaurant.category.capitalize  %></strong>  cuisine ! </p>
+    <p>Metro : <%= @restaurant.address %></p>
+    <p>Please contact them at this n° <%= @restaurant.phone_number %></p>
+  </div>
+  <div>
+    <% @reviews.each do |review| %>
+    <h3><%= review.content %></h3>
+    <% end %>  
+    <%= link_to("Add a Review", new_restaurant_review_path(@restaurant)) %>
+  </div>
+  <div>
+    <%= link_to("Back to the list", restaurants_path) %>
+  </div>
+</div>
